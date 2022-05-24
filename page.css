@@ -1,0 +1,129 @@
+html,
+body {
+    margin: 0;
+    font-family: verdana, arial, sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+img {
+    width: 500px;
+}
+
+.container,
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 24px 24px 24px;
+}
+
+.cover-page {
+    page-break-after: always;
+}
+
+.cover-page img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+table {
+    width: 80%;
+    font-size: 11px;
+    color: #333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+
+table th {
+    border-width: 1px;
+    padding: 0px 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+    text-align: center;
+}
+
+table td {
+    border-width: 1px;
+    padding: 0px 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+p {
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    margin-bottom: 0;
+    font-size:
+}
+
+.url {
+    text-align: center;
+    font-size: 8px;
+}
+
+div.divFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    padding: 8px;
+    margin: 0 auto;
+}
+
+div.pageCount:after {
+    content: "Page " counter(page) " / " counter(pages);
+    left: 0;
+    top: 100%;
+    white-space: nowrap;
+    z-index: 20;
+    color: black;
+}
+
+@media print {
+    div.divFooter {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    img {
+        width: 2in;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table {
+        width: 8in;
+        font-size: 10px;
+    }
+
+    .container {
+        padding: 0 1in;
+        page-break-after: always;
+    }
+
+    .cover-page img {
+        width: 100%;
+    }
+}
